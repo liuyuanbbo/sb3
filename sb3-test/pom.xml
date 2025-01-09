@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-boot3-test</module>
+        <module>spring-boot3-phoenix</module>
     </modules>
 
     <properties>
