@@ -28,6 +28,18 @@
             <artifactId>phoenix-core</artifactId>
             <version>5.2.1</version>
         </dependency>
+        <!--旧版-->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.69</version>
+        </dependency>
+        <!--新版-->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <version>1.79</version>
+        </dependency>
     </dependencies>
 
 </project>
