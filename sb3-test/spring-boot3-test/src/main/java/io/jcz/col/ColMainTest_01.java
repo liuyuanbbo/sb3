@@ -1,6 +1,10 @@
 package io.jcz.col;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.beans.BeanUtils;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -29,6 +33,28 @@ public class ColMainTest_01 {
         }
 
         System.out.println(rs);
+
+        System.out.println("==================================================");
+        List<Cls> cls = new ArrayList<>();
+
+        cls.add(new Cls(1L, "zjc1", "zjc1"));
+
+        Cls cls1 = cls.getFirst();
+        if ("zjc1".equals(cls1.getCode())) {
+            Cls clsCp = new Cls();
+            BeanUtils.copyProperties(cls1, clsCp);
+            clsCp.setCode("zjc1-CP");
+
+            cls.add(clsCp);
+        }
+
+        System.out.println(cls);
+        System.out.println("==================================================");
+        List<Integer> lst1 = List.of(1, 2, 3);
+        List<Integer> lst2 = List.of(2, 3);
+        Collection<Integer> intersectionCol = CollectionUtils.subtract(lst1, lst2);
+        System.out.println(intersectionCol);
+        System.out.println("==================================================");
     }
 
     static class Cls {
@@ -36,10 +62,17 @@ public class ColMainTest_01 {
         String code;
         String name;
 
+        public Cls() {
+        }
+
         public Cls(Long id, String code, String name) {
             this.id = id;
             this.code = code;
             this.name = name;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
         }
 
         public Long getId() {
@@ -48,6 +81,14 @@ public class ColMainTest_01 {
 
         public String getName() {
             return name;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
         }
 
         public void setName(String name) {
