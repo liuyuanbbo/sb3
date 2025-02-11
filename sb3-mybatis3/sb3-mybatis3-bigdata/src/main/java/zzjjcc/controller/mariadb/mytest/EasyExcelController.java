@@ -66,6 +66,7 @@ public class EasyExcelController {
         });
 
         // 模拟数据
+        /*
         List<Map<String, Object>> dataList = new ArrayList<>();
         Map<String, Object> row1 = new HashMap<>();
         row1.put("name", "张三");
@@ -80,18 +81,33 @@ public class EasyExcelController {
         dataList.add(row2);
 
         datas = dataList;
+         */
 
         if (CollectionUtils.isNotEmpty(datas)) {
             // 3. 直接写入响应输出流
             try (ExcelWriter writer = EasyExcel.write(response.getOutputStream()).build()) {
-                List<String> head = new ArrayList<>(datas.getFirst().keySet());
-                WriteSheet sheet = EasyExcel.writerSheet(sheetName).head(convertHead(head)).build();
-                writer.write(datas, sheet);
+                List<String> headers = new ArrayList<>(datas.getFirst().keySet());
+                List<List<Object>> vals = convertVals(datas, headers);
+                WriteSheet sheet = EasyExcel.writerSheet(sheetName).head(convertHead(headers)).build();
+                writer.write(vals, sheet);
             } catch (IOException e) {
                 throw new RuntimeException("modelDynamicExportExcel IOException");
             }
         }
 
+    }
+
+    private List<List<Object>> convertVals(List<Map<String, Object>> datas, List<String> headers) {
+        // 动态设置数据
+        List<List<Object>> list = new ArrayList<>();
+        for (Map<String, Object> map : datas) {
+            List<Object> row = new ArrayList<>();
+            for (String header : headers) {
+                row.add(map.get(header));
+            }
+            list.add(row);
+        }
+        return list;
     }
 
     /**
