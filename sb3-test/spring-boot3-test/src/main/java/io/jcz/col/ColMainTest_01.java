@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ColMainTest_01 {
@@ -54,6 +56,15 @@ public class ColMainTest_01 {
         List<Integer> lst2 = List.of(2, 3);
         Collection<Integer> intersectionCol = CollectionUtils.subtract(lst1, lst2);
         System.out.println(intersectionCol);
+        System.out.println("==================================================");
+        String filePath = "/temp/${day_id}";
+        Pattern pattern = Pattern.compile("\\/+$");
+        Matcher matcher = pattern.matcher(filePath);
+        if (matcher.find()) {
+            System.out.println(filePath);
+        } else {
+            System.out.println(filePath + "/");
+        }
         System.out.println("==================================================");
     }
 

@@ -1,5 +1,5 @@
 {
-  "modelName": "数据集分析_hnyd_动态账期条件",
+  "modelName": "数据集分析_hnyd_7014",
   "metaData": {
     "order_id_count": "channel渠道故障时间表达式between fault_time_start and fault_time_end定单ID计数",
     "order_id_count1": "channel渠道故障时间表达式between_fault_time定单ID计数",
@@ -39,19 +39,9 @@
       "columnName": "故障时间",
       "columnType": "date",
       "dataFormat": "yyyy-MM-dd HH:mm:ss",
-      "defaultParameter": "2025-01-21 11:32:41",
+      "defaultParameter": "2025-01-23 15:59:23",
       "originColumnType": "DateTime",
       "type": "range",
-      "useInWhere": false
-    },
-    {
-      "columnCode": "fault_time",
-      "columnName": "故障时间",
-      "columnType": "date",
-      "dataFormat": "yyyy-MM-dd HH:mm:ss",
-      "defaultParameter": "2025-01-21 11:32:41",
-      "originColumnType": "DateTime",
-      "type": "time",
       "useInWhere": false
     }
   ],
@@ -59,7 +49,7 @@
     1032
   ],
   "datasourceId": 19623,
-  "bizId": 1101126,
+  "bizId": 1101130,
   "bizModule": "consume",
   "modelType": 7,
   "drillDetails": [
@@ -196,7 +186,7 @@
         "deal_process": "处理过程",
         "apply_staff_id": "审核人工号",
         "deal_way": "是否上门",
-        "state_date": "更新时间",
+        "state_date": "更���时间",
         "group_id": "集团ID",
         "repeat_complaint_times": "重复投诉次数",
         "party_id": "处理人ID",
@@ -229,7 +219,7 @@
         "trouble_clear_date": "问题消除时间",
         "reject_id": "驳回原因编码",
         "band_cust_level": "客户服务等级",
-        "finish_not_reason_id": "回单不通过原因编码",
+        "finish_not_reason_id": "回单不��过原因编码",
         "reserve_end_date": "预约结束时间",
         "group_name": "集团名称",
         "special_line": "宽带类型",
@@ -316,7 +306,7 @@
         "urgent_degree": "紧急程度名称",
         "city_id": "城市ID",
         "prosecute_type_name": "投诉分类名称",
-        "no_code_reason": "无码回单原因",
+        "no_code_reason": "无码回单���因",
         "finish_not_reason": "回单不通过原因",
         "btype1": "派发联系人",
         "complaint_fifth": "投诉五级分类",
