@@ -5,6 +5,7 @@ import cn.hutool.core.map.MapUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
+import com.alibaba.excel.write.style.column.SimpleColumnWidthStyleStrategy;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletResponse;
@@ -88,7 +89,9 @@ public class EasyExcelController {
             try (ExcelWriter writer = EasyExcel.write(response.getOutputStream()).build()) {
                 List<String> headers = new ArrayList<>(datas.getFirst().keySet());
                 List<List<Object>> vals = convertVals(datas, headers);
-                WriteSheet sheet = EasyExcel.writerSheet(sheetName).head(convertHead(headers)).build();
+                WriteSheet sheet = EasyExcel.writerSheet(sheetName)
+                        .registerWriteHandler(new SimpleColumnWidthStyleStrategy(22))
+                        .head(convertHead(headers)).build();
                 writer.write(vals, sheet);
             } catch (IOException e) {
                 throw new RuntimeException("modelDynamicExportExcel IOException");
