@@ -1,7 +1,7 @@
 spring:
   datasource:
     redis:
-      host: ${rds.host}
+      host: ${host}
       port: 6380
       password: '123456'
       database: 0
