@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.zmz.sb3.redis.seckill.common.PageDTO;
 import org.zmz.sb3.redis.seckill.domain.Item;
 import org.zmz.sb3.redis.seckill.domain.ItemStock;
+import org.zmz.sb3.redis.seckill.mapper.ItemMapper;
 import org.zmz.sb3.redis.seckill.service.ItemService;
 import org.zmz.sb3.redis.seckill.service.ItemStockService;
 
@@ -29,7 +30,7 @@ public class ItemController {
     @Autowired
     private ItemStockService itemStockService;
 
-    @GetMapping("list")
+    @GetMapping("/list")
     public PageDTO queryItemPage(
             @RequestParam(value = "page", defaultValue = "1") Integer page,
             @RequestParam(value = "size", defaultValue = "5") Integer size) {
@@ -59,7 +60,7 @@ public class ItemController {
         itemService.updateById(item);
     }
 
-    @PutMapping("stock")
+    @PutMapping("/stock")
     public void updateStock(@RequestBody ItemStock itemStock) {
         itemStockService.updateById(itemStock);
     }
@@ -71,6 +72,8 @@ public class ItemController {
 
     @GetMapping("/{id}")
     public Item findById(@PathVariable("id") Long id) {
+        ItemMapper itemMapper = itemService.getBaseMapper();
+
         return itemService.query()
                 .ne("status", 3).eq("id", id)
                 .one();

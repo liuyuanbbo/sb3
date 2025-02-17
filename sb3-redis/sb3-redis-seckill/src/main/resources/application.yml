@@ -1,9 +1,17 @@
 host: 192.168.234.201
+port:
+  mysql: 3336
+  redis: 6380
 server:
   port: 9526
 spring:
   application:
     name: RedisSecKill
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${host}:${port.mysql}/testDb?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: '123456'
   thymeleaf:
     enabled: on
     mode: HTML
