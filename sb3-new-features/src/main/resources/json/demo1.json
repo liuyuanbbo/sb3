@@ -1,25 +1,64 @@
 {
-  "datas": [
+  "queryFields": [
     {
-      "字段编码": "111",
-      "字段名称": "111",
-      "字段类型": "111",
-      "字段分类": "111",
-      "关联术语": "111",
-      "业务口径": "111",
-      "技术口径": "111",
-      "字段来源": "111"
+      "columnType": "string",
+      "useInWhere": false,
+      "columnCode": "date_flag",
+      "defaultParameter": 0,
+      "type": "singleSelect",
+      "dataSource": [
+        {
+          "name": "派单时间",
+          "value": "派单时间"
+        },
+        {
+          "name": "归档时间",
+          "value": "归档时间"
+        }
+      ],
+      "originColumnType": "DateTime",
+      "columnName": "创建时间(date_flag)"
     },
     {
-      "字段编码": "222",
-      "字段名称": "222",
-      "字段类型": "222",
-      "字段分类": "222",
-      "关联术语": "222",
-      "业务口径": "222",
-      "技术口径": "222",
-      "字段来源": "222"
+      "columnType": "date",
+      "dataFormat": "yyyy-MM-dd HH: mm: ss",
+      "useInWhere": false,
+      "columnCode": "create_date",
+      "defaultParameter": "2025-03-12 15: 51: 51",
+      "type": "range",
+      "originColumnType": "DateTime",
+      "columnName": "创建时间"
+    },
+    {
+      "columnType": "string",
+      "useInWhere": false,
+      "columnCode": "re_type",
+      "defaultParameter": 0,
+      "type": "singleSelect",
+      "dataSource": [
+        {
+          "name": "S单+协办单",
+          "value": "S单+协办单"
+        },
+        {
+          "name": "协同单",
+          "value": "协同单"
+        },
+        {
+          "name": "F单",
+          "value": "F单"
+        },
+        {
+          "name": "S单",
+          "value": "S单"
+        },
+        {
+          "name": "全部",
+          "value": "全部"
+        }
+      ],
+      "originColumnType": "DateTime",
+      "columnName": "创建时间(re_type)"
     }
-  ]
   ]
 }
