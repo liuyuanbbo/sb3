@@ -104,6 +104,11 @@ public class ColTest_01 {
         System.out.println(ss);
     }
 
+    @Test
+    public void t9() {
+        System.out.println(Integer.MAX_VALUE);
+    }
+
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
         Map<Long, CallTrendVo> map = new LinkedHashMap<>();
         LocalDate now = LocalDate.now();

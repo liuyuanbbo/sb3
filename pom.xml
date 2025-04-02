@@ -24,6 +24,7 @@
         <module>sb3-microcloud</module>
         <module>sb3-common</module>
         <module>sb3-test</module>
+        <module>sb3-sa-token</module>
     </modules>
 
     <properties>
