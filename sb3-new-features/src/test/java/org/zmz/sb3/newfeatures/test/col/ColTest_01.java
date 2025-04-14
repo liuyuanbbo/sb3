@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -107,6 +108,12 @@ public class ColTest_01 {
     @Test
     public void t9() {
         System.out.println(Integer.MAX_VALUE);
+    }
+
+    @Test
+    public void t10() {
+        List<?> list = Collections.singletonList(null);
+        System.out.println(list);
     }
 
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
