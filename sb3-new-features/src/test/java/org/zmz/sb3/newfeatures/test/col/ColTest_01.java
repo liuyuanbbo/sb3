@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.tuple.Triple;
 import org.junit.jupiter.api.Test;
 import org.zmz.sb3.newfeatures.col.FastListUtil;
 
@@ -12,10 +13,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ColTest_01 {
     @Test
@@ -108,6 +111,65 @@ public class ColTest_01 {
     public void t9() {
         System.out.println(Integer.MAX_VALUE);
     }
+
+    @Test
+    public void t10() {
+        byte[] bytes = Base64.getEncoder().encode("今年 会不会发 黏肿酱 的 ？".getBytes());
+        System.out.println(new String(bytes));
+    }
+
+    @Test
+    public void t11() {
+        String format = "%s_tdp";
+
+        List<String> list = List.of("AA", "BB", "CC");
+
+        List<String> rsList = new ArrayList<>();
+        for (String s : list) {
+            String rs = String.format(format, s);
+            rsList.add(rs);
+        }
+
+        System.out.println(rsList);
+    }
+
+    @Test
+    public void t12() {
+        Triple<Integer, String, Integer> triple1 = Triple.of(101, "test", 1001);
+        Triple<Integer, String, Integer> triple2 = Triple.of(102, "test2", 1002);
+        Triple<Integer, String, Integer> triple3 = Triple.of(103, "test3", 1003);
+        Triple<Integer, String, Integer> triple4 = Triple.of(104, "test3", 1004);
+
+        List<Triple<Integer, String, Integer>> list = List.of(triple1, triple2, triple3, triple4);
+
+        System.out.println(list);
+
+    }
+
+    @Test
+    public void t13() {
+        AtomicReference<List<String>> atomic = new AtomicReference<>();
+        atomic.set(null);
+
+        List<String> strings = atomic.get();
+        System.out.println(strings);
+    }
+
+    @Test
+    public void t14() {
+        String s = "test_20250417.sql";
+
+        String prefix = StringUtils.substringBefore(s, ".");
+        String prefixLast = StringUtils.substringBeforeLast(s, ".");
+        String suffix = StringUtils.substringAfter(s, ".");
+        String suffixLast = StringUtils.substringAfterLast(s, ".");
+
+        System.out.println(prefix);
+        System.out.println(prefixLast);
+        System.out.println(suffix);
+        System.out.println(suffixLast);
+    }
+
 
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
         Map<Long, CallTrendVo> map = new LinkedHashMap<>();
