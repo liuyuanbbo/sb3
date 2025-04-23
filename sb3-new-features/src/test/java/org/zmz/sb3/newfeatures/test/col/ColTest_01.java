@@ -14,6 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -170,6 +171,12 @@ public class ColTest_01 {
         System.out.println(suffixLast);
     }
 
+
+    @Test
+    public void t15() {
+        List<?> list = Collections.singletonList(null);
+        System.out.println(list);
+    }
 
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
         Map<Long, CallTrendVo> map = new LinkedHashMap<>();
