@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -176,6 +177,17 @@ public class ColTest_01 {
     public void t15() {
         List<?> list = Collections.singletonList(null);
         System.out.println(list);
+    }
+
+    @Test
+    public void t16() {
+        Map<Integer, Object> map = new HashMap<>(3);
+        map.put(1, "priv_code");
+        map.put(2, "`priv_code`");
+        map.put(3, "`priv_code`");
+        map.put(4, "`priv_code`");
+
+        System.out.println(map);
     }
 
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
