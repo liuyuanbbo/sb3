@@ -23,6 +23,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mariadb.version>3.4.1</mariadb.version>
+        <kafka.version>3.9.1</kafka.version>
     </properties>
 
 </project>

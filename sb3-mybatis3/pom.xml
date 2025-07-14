@@ -28,6 +28,8 @@
         <mybatis.version>3.5.16</mybatis.version>
         <mybatis-spring.version>3.0.4</mybatis-spring.version>
         <mariadb.version>3.4.1</mariadb.version>
+        <mybatis-boot.version>3.0.4</mybatis-boot.version>
+        <mplus-boot3.version>3.5.12</mplus-boot3.version>
     </properties>
 
     <packaging>pom</packaging>

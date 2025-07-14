@@ -16,6 +16,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mplus-boot3.version>3.5.12</mplus-boot3.version>
     </properties>
 
     <dependencies>
@@ -30,7 +31,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>3.5.8</version>
+            <version>${mplus-boot3.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>

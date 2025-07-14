@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>3.5.8</version>
+            <version>${mplus-boot3.version}</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
