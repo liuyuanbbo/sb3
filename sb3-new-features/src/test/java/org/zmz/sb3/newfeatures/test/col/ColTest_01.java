@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Triple;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Slf4j
 public class ColTest_01 {
+
     @Test
     public void t1() {
         List<Map<String, Object>> list = List.of(
@@ -188,6 +191,16 @@ public class ColTest_01 {
         map.put(4, "`priv_code`");
 
         System.out.println(map);
+    }
+
+    @Test
+    public void t17() {
+        Map<String, Integer> map = new HashMap<>(3);
+        map.put("co1", 1);
+        map.put("co2", 2);
+        map.put("co3", 3);
+
+        log.info("{}", map);
     }
 
     public Map<Long, CallTrendVo> initCallTrendVo(int recent) {
