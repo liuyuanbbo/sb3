@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8082
 spring:
   application:
-    name: gateway
+    name: gateway2
   jackson:
     default-property-inclusion: non_null
   cloud:
@@ -10,4 +10,4 @@ spring:
       server-addr: 127.0.0.1:8848
 logging:
   level:
-    zzjjcc: debug
+    io.jcz: debug

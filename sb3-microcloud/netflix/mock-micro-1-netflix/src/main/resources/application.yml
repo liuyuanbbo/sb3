@@ -1,0 +1,12 @@
+server:
+  port: 10000
+
+spring:
+  application:
+    name: mock-micro-netflix
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.21.72.154:8900/eureka/
+    register-with-eureka: true
+    fetch-registry: true
