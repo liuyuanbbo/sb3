@@ -1,9 +1,9 @@
 server:
-  port: 10000
+  port: 10001
 
 spring:
   application:
-    name: mock-micro-netflix
+    name: mock-micro-1-netflix
 eureka:
   client:
     service-url:
