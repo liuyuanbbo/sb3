@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -12,6 +13,12 @@ import java.util.regex.Pattern;
 
 @Slf4j
 public class MyTester_1 {
+
+    @Test
+    public void t0() {
+
+    }
+
     @Test
     public void t1() {
         String sql = """
@@ -64,6 +71,17 @@ public class MyTester_1 {
                 """;
         List<String> sqlColumnList = getSqlColumnList(sql);
         log.info("<<< buildGroupQueryFields getSqlColumnList >>> {}", sqlColumnList);
+    }
+
+    @Test
+    public void t2() {
+        String primaryKey = "1212,5656,89466";
+        String cleanedPrimaryKey = primaryKey.replaceAll("[\\[\\]\\s]", "");
+        List<Long> primaryKeys = Arrays.stream(cleanedPrimaryKey.split(",")).filter(StringUtils::isNotEmpty)
+                .map(String::trim).map(Long::valueOf).toList();
+        for (Long key : primaryKeys) {
+            log.info("{}", key);
+        }
     }
 
     public static List<String> getSqlColumnList(String sql) {
