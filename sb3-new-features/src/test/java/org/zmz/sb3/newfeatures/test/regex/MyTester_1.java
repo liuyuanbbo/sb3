@@ -84,6 +84,13 @@ public class MyTester_1 {
         }
     }
 
+    @Test
+    public void t3() {
+        List<String> columnIds = List.of("5164");
+        String s = StringUtils.join(columnIds, ",");
+        log.info("{}", s);
+    }
+
     public static List<String> getSqlColumnList(String sql) {
 
         if (StringUtils.isEmpty(sql)) {
