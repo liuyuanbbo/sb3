@@ -1,7 +1,0 @@
-spring:
-  datasource:
-    redis:
-      host: ${host}
-      port: ${port.redis}
-      password: '123456'
-      database: 0

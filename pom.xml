@@ -6,33 +6,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.zmz</groupId>
-    <artifactId>sb3</artifactId>
+    <artifactId>sb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>sb3-new-features</module>
-        <module>sb3-security</module>
-        <module>sb3-rabbitmq</module>
-        <module>sb3-nettychat</module>
-        <module>sb3-redis</module>
-        <module>sb3-mybatis3</module>
+        <module>sb-new-features</module>
+        <module>sb-security</module>
+        <module>sb-rabbitmq</module>
+        <module>sb-nettychat</module>
+        <module>sb-redis</module>
+        <module>sb-mybatis3</module>
         <module>FlinkStudy</module>
-        <module>sb3-rocketmq</module>
-        <module>sb3-kafka</module>
-        <module>sb3-starter</module>
-        <module>sb3-big-event-server</module>
-        <module>sb3-microcloud</module>
-        <module>sb3-common</module>
-        <module>sb3-test</module>
-        <module>sb3-sa-token</module>
+        <module>sb-rocketmq</module>
+        <module>sb-kafka</module>
+        <module>sb-starter</module>
+        <module>sb-big-event-server</module>
+        <module>sb-microcloud</module>
+        <module>sb-common</module>
+        <module>sb-test</module>
+        <module>sb-sa-token</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.5.6</spring-boot.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
     </properties>
 
     <packaging>pom</packaging>
