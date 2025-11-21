@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: gateway1
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: on
+              lower-case-service-id: on
+          routes:
+            - id: mock-micro-1-netflix
+              uri: lb://mock-micro-1-netflix
+              predicates:
+                - Path=/mock/micro1/netflix/**
+              filters:
+                - StripPrefix=3
+            - id: SMARTSERVICE
+              uri: lb://SMARTSERVICE
+              predicates:
+                - Path=/smartweb/smartservice
+              filters:
+                - StripPrefix=2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.21.72.154:8900/eureka/
+    register-with-eureka: true
+    fetch-registry: true

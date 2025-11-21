@@ -1,0 +1,73 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.4.7
+    hostname: mysql
+    ports:
+      - "3310:3310"
+    volumes:
+      - /data/mysql/script:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: "doris-test"
+      MYSQL_PASSWORD: "123456"
+    command:
+      - "--character-set-server=utf8"
+      - "--collation-server=utf8_general_ci"
+
+  jobmanager:
+    image: apache/flink:1.17-scala_2.12
+    hostname: jobmanager
+    ports:
+      - "8081:8081"
+    expose:
+      - "6123"
+    volumes:
+      - /data/flink/flink-doris-connector-1.17-1.6.2.jar:/opt/flink/lib/flink-doris-connector-1.17-1.6.2.jar
+      - /data/flink/flink-sql-connector-mysql-cdc-2.4.2.jar:/opt/flink/lib/flink-sql-connector-mysql-cdc-2.4.2.jar
+    command: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+
+  taskmanager:
+    image: apache/flink:1.17-scala_2.12
+    depends_on:
+      - jobmanager
+    links:
+      - "jobmanager:jobmanager"
+    expose:
+      - "6121"
+      - "6122"
+    volumes:
+      - /data/flink/flink-doris-connector-1.17-1.6.2.jar:/opt/flink/lib/flink-doris-connector-1.17-1.6.2.jar
+      - /data/flink/flink-sql-connector-mysql-cdc-2.4.2.jar:/opt/flink/lib/flink-sql-connector-mysql-cdc-2.4.2.jar
+    command: taskmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+
+  doris:
+    image: registry.cn-hangzhou.aliyuncs.com/freeoneplus/doris:2.1.4-all
+    hostname: doris
+    network_mode: host
+    ports:
+      - "8030:8030"
+      - "9030:9030"
+      - "8040:8040"
+
+  superset:
+    image: selectdb/superset_3.0.1-cloud_3.0.3:latest
+    user: "root"
+    network_mode: host
+    ports:
+      - "8088:8088"
+    restart: on-failure
+    environment:
+      - SUPERSET_SECRET_KEY="doris"
+    command: |
+      sh -c "
+        superset db upgrade &&
+        superset fab create-admin --username admin --password doris --firstname Superset --lastname Admin --email admin@superset.com &&
+        superset init &&
+        /usr/bin/run-server.sh
+      "

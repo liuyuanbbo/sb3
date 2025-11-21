@@ -1,0 +1,11 @@
+server:
+  port: 9524
+spring:
+  application:
+    name: sb3-new-features
+  config:
+    import: conf/mysql.yml,conf/redis.yml
+logging:
+  level:
+    root: info
+    org.zmz.sb3.newfeatures.minispring.beanfactory: debug
