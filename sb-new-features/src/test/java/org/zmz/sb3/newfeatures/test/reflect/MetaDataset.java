@@ -84,5 +84,4 @@ public class MetaDataset implements Serializable {
     private String iSpendTime;
     private String tableStorageSpace;
     private String iHeatScore;
-    //private List<MetaDatasetLabelRel> relList;
 }
