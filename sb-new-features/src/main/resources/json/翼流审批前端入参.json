@@ -1,0 +1,56 @@
+{
+  "applyInfo": {
+    "channel": "1",
+    "serviceSubType": "01",
+    "applyCode": "APN_EIPE0015049_20260104_001",
+    "expDateStr": "20260704",
+    "applyReason": "测试sm4解密",
+    "orderTotal": 10,
+    "smartId": 1530
+  },
+  "calculatePrice": {
+    "typeAndNum": {
+      "01": 1
+    },
+    "expDate": "20260704",
+    "effDate": "20260103",
+    "extractType": "once"
+  },
+  "serviceInfo": {
+    "tableArray": [
+      {
+        "serviceId": 1014439,
+        "dataCode": "tmp_xhjtest_2025072301_d",
+        "historyAcct": "20260103",
+        "historyEndAcct": "20260104"
+      }
+    ]
+  },
+  "columnInfo": {
+    "1014439": [
+      {
+        "columnId": 18887393,
+        "columnCode": "user_id",
+        "isDst": "0",
+        "dstAlgorithmId": "12",
+        "isDecrypt": "1"
+      },
+      {
+        "columnId": 18887394,
+        "columnCode": "name",
+        "isDst": "0"
+      }
+    ]
+  },
+  "condList": [],
+  "applyRegion": [
+    {
+      "orgCode": "843100100020000",
+      "orgLevel": 3
+    }
+  ],
+  "extractType": "once",
+  "applyInfoExtend": {},
+  "language": "zh-CN",
+  "envType": "hunandianxin"
+}

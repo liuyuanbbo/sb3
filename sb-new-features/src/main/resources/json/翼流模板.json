@@ -1,0 +1,29 @@
+{
+  "defId": "wf77e8fddc3356c47efa0f2341f4e82a14bd",
+  "deptId": "${orgId}",
+  "formData": {
+    "${applyData}field3472749115694": [
+      {
+        "field1255915134362": "${securityLevel}",
+        "field4506214490228": "库表名:${applyName}（${applyCode}），订阅原因：${applyReason}，提取方式：${extractType}",
+        "field6992914724619": "${protocolCode}",
+        "field7469455861758": {
+          "decryptColumnList": []
+        },
+        "field7503840345520": "${dataCode}(${srcSchemaCode}.${srcTableCode})",
+        "field8302455888428": "${hasDecryptColumnCurrent}",
+        "field8665714692319": "数据申请",
+        "field9078115174265": "${distributeInfo}",
+        "field9200814699864": "宽表订阅",
+        "field9238415141071": "${distributeType}"
+      }
+    ],
+    "field1531755901415": "${hasAnyDecryptColumn}",
+    "field5047907204463": "${hasFtpDeliver}"
+  },
+  "processUsers": {
+    "node_402547394689": "${userList}"
+  },
+  "title": "${applyName}",
+  "userId": "${applyStaffCode}"
+}

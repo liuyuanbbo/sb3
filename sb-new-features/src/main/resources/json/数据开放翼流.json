@@ -1,0 +1,29 @@
+{
+  "defId": "wf77e8fddc3356c47efa0f2341f4e82a14bd",
+  "deptId": "843100100020000",
+  "formData": {
+    "field5047907204463": "",
+    "field3472749115694": [
+      {
+        "field4506214490228": "库表名:测试解密申请（APN_EIPE0015049_20260104_001），订阅原因：测试解密申请(0&&user_dataopen)，提取方式：一次性",
+        "field7503840345520": "tmp_xhjtest_2025072301_d(user_dataopen.tmp_xhjtest_2025072301_d)",
+        "field9078115174265": "我的谢慧姣测试1-可删宽表上架134.176.28.204 134.176.28.248 /wls/dataopen/da/mytest 22 ogg",
+        "field9200814699864": "宽表订阅",
+        "field6992914724619": "TDPB_USER_DATAOPEN_HIVE",
+        "field1255915134362": "",
+        "field9238415141071": "ftp",
+        "field8665714692319": "数据申请",
+        "field8302455888428": "",
+        "field7469455861758": {
+          "decryptColumnList": []
+        }
+      }
+    ],
+    "field1531755901415": ""
+  },
+  "processUsers": {
+    "node_402547394689": ""
+  },
+  "title": "测试解密申请",
+  "userId": "EIPE0015049"
+}
